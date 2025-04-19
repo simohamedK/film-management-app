@@ -1,0 +1,9 @@
+Users API:
+- GET all users localhost:8080/api/users/get/all
+- GET user by id localhost:8080/api/users/get/by/id/{id}
+- GET user by email localhost:8080/api/users/get/by/email/{email}
+- GET user by username localhost:8080/api/users/get/by/username/{username}
+- POST create user localhost:8080/api/users/create
+- PUT update user localhost:8080/api/users/update/{id}
+- DELETE user by id localhost:8080/api/users/delete/{id}
+- GET login user localhost:8080/api/users/login

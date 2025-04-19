@@ -1,0 +1,50 @@
+.hero-banner{
+    height: 400px;
+    .p-carousel{
+        height: 100%;
+        .p-carousel-content{
+            height: 100%;
+            .p-carousel-container{
+                height: 100%;
+                .p-carousel-prev,
+                .p-carousel-next{
+                    position: absolute;
+                    z-index: 1;
+                }
+                .p-carousel-next{
+                    right: 0;
+                }
+
+                .p-carousel-items-container{
+                    height: 100%;
+                    .hero-item{
+                        height: 100%;
+                        position: relative;
+                        
+                        p{
+                            width: 400px;
+                            word-wrap: break-word;
+                            word-break: break-all;
+                            margin: 20px;
+                            padding: 10px;
+                            overflow: hidden;
+                            font-size: larger;
+                            color: red;
+
+           }
+                        img{
+                            object-fit: cover;
+                            z-index: -1;
+                        }
+                
+                      }
+                }
+                
+
+            }
+        }
+    }
+     
+   
+    
+}

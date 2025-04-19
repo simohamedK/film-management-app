@@ -1,0 +1,64 @@
+<div class="container mt-5">
+  <h1 class="text-center mb-4">Gestion des Catégories</h1>
+
+  <div *ngIf="showAddCategoryForm" class="card mb-4">
+    <div class="card-header">
+      <h3>Ajouter une Catégorie</h3>
+    </div>
+    <div class="card-body">
+      <form (ngSubmit)="submitAddCategory()">
+        <div class="mb-3">
+          <label for="categoryName" class="form-label">Nom de la catégorie</label>
+          <input type="text" id="categoryName" class="form-control" [(ngModel)]="newCategory.name" name="name" required>
+        </div>
+        <div class="d-flex justify-content-between">
+          <button type="submit" class="btn btn-primary">Ajouter Catégorie</button>
+          <button type="button" class="btn btn-secondary" (click)="showAddCategoryForm = false">Annuler</button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <div *ngIf="!showAddCategoryForm && !showEditCategoryForm">
+    <div class="d-flex justify-content-between align-items-center mb-3">
+      <button class="btn btn-outline-primary" (click)="openAddCategoryForm()" title="Ajouter Catégorie">
+        <i class="fas fa-plus me-1"></i>
+        Ajouter Catégorie
+      </button>
+    </div>
+
+    <table class="table table-bordered text-center">
+      <thead>
+      <tr>
+        <th>Nom de la Catégorie</th>
+        <th>Actions</th>
+      </tr>
+      </thead>
+      <tbody>
+      <tr *ngFor="let category of categories">
+        <td>{{ category.name }}</td>
+        <td>
+          <button class="btn btn-outline-warning me-2" (click)="openEditCategoryForm(category)" title="Modifier">
+            <i class="fas fa-edit"></i>
+          </button>
+          <button class="btn btn-outline-danger me-2" (click)="deleteCategory(category)" title="Supprimer">
+            <i class="fas fa-trash"></i>
+          </button>
+        </td>
+      </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div *ngIf="showEditCategoryForm">
+    <h3>Modifier la Catégorie</h3>
+    <form (ngSubmit)="submitEditCategory()">
+      <div class="mb-3">
+        <label for="editCategoryName" class="form-label">Nom de la Catégorie</label>
+        <input type="text" id="editCategoryName" [(ngModel)]="selectedCategory!.name" name="editName" class="form-control" required />
+      </div>
+      <button type="submit" class="btn btn-primary">Enregistrer les modifications</button>
+      <button type="button" class="btn btn-secondary" (click)="showEditCategoryForm = false">Annuler</button>
+    </form>
+  </div>
+</div>

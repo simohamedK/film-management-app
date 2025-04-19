@@ -1,0 +1,16 @@
+# .gitignore
+# Backend
+/target
+*.log
+*.class
+*.jar
+
+# Frontend
+/node_modules
+/dist
+
+# Global
+.env
+.DS_Store
+.idea
+*.iml

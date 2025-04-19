@@ -1,0 +1,55 @@
+<div class="home-container">
+  <app-hero-banner></app-hero-banner>
+
+  <main>
+    <section class="content">
+      <h3>Mes meilleurs films</h3>
+      <div class="grid">
+        <div class="card">
+          <img src="/assets/img/vwioejmi.png" alt="Film 1" height="335" />
+          <h4>The Predator</h4>
+        </div>
+        <div class="card">
+          <img src="/assets/img/dyb57lmi.png" alt="Film 2" />
+          <h4>la vie de l'adolescent</h4>
+        </div>
+        <div class="card">
+          <img src="/assets/img/ijurizk8.png" alt="Film 3" height="335" />
+          <h4>The Witgher</h4>
+        </div>
+        <div class="card">
+          <img src="/assets/img/img1.png" alt="Film 4" height="335" />
+          <h4>The Brabanter</h4>
+        </div>
+        <div class="card">
+          <img src="/assets/img/tgm8kdzl.png" alt="Film 5" height="335" />
+          <h4>Protect Animals</h4>
+        </div>
+      </div>
+    </section>
+    @for (category of categories; track category.id) {
+      @if(category.storys) {
+        <section class="{{category.name}}">
+          <h2>Le meilleure de la catégorie {{category.name}}</h2>
+          @for (story of category.storys; track $index) { @if (story) {
+            <app-card-story [story]="story"></app-card-story>
+          }
+
+          }
+        </section>
+      }
+
+    }
+
+
+    <!-- <section class="legende">
+      <h2>Nos plus grands contes et legendes</h2>
+      <div class="legendestory">
+        @for (story of stories; track $index) { @if (story.categorie.name ===
+        "Contes-et-Légendes") {
+        <app-card-story [story]="story"></app-card-story>
+        } }
+      </div>
+    </section> -->
+  </main>
+</div>
